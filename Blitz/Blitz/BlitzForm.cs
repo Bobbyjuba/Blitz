@@ -25,24 +25,80 @@ namespace Blitz {
 		// Indexer to iterate through background[]
 		private int index = 0;
 		private int coins = 0;
+		private Random r = new Random();
+		private int moveSpeed = 11;
 
 		public BlitzForm() {
 			InitializeComponent();
 			backgroundTimer.Start();
+			gameTimer.Start();
 		}
 
 		// gameTimer should handle the majority of event logic
 		private void gameTimer_Tick(object sender, EventArgs e) {
-			if (coinBox.Bounds.IntersectsWith(carBox.Bounds)) {
-				coinBox.Visible = false;
+			coinCheck();
+			moveCoins();
+		}
+
+		private void coinCheck() {
+			if (coinBox1.Bounds.IntersectsWith(carBox.Bounds)) {
+				int x = r.Next(54, 349);
+				coinBox1.Location = new Point(x, 5);
 				coins++;
+				updateScore();
 			}
 
-			if (coinBox.Location.Y > carBox.Bottom + 5) {
-				coinBox.Visible = false;
+			if (coinBox1.Location.Y > carBox.Bottom + 5) {
+				int x = r.Next(54, 349);
+				coinBox1.Location = new Point(x, 5);
 			}
 
-			coinBox.Top += 17;
+			if (coinBox2.Bounds.IntersectsWith(carBox.Bounds)) {
+				int x = r.Next(54, 349);
+				coinBox2.Location = new Point(x, 5);
+				coins++;
+				updateScore();
+			}
+
+			if (coinBox2.Location.Y > carBox.Bottom + 5) {
+				int x = r.Next(54, 349);
+				coinBox2.Location = new Point(x, 5);
+			}
+
+			if (coinBox3.Bounds.IntersectsWith(carBox.Bounds)) {
+				int x = r.Next(54, 349);
+				coinBox3.Location = new Point(x, 5);
+				coins++;
+				updateScore();
+			}
+
+			if (coinBox3.Location.Y > carBox.Bottom + 5) {
+				int x = r.Next(54, 349);
+				coinBox3.Location = new Point(x, 5);
+			}
+
+			if (coinBox4.Bounds.IntersectsWith(carBox.Bounds)) {
+				int x = r.Next(54, 349);
+				coinBox4.Location = new Point(x, 5);
+				coins++;
+				updateScore();
+			}
+
+			if (coinBox4.Location.Y > carBox.Bottom + 5) {
+				int x = r.Next(54, 349);
+				coinBox4.Location = new Point(x, 5);
+			}
+		}
+
+		private void moveCoins() {
+			coinBox1.Top += moveSpeed;
+			coinBox2.Top += moveSpeed;
+			coinBox3.Top += moveSpeed;
+			coinBox4.Top += moveSpeed;
+		}
+
+		private void updateScore() {
+			coinLabel.Text = $"Coins: {coins}";
 		}
 
 		// backgroundTimer should handle the task of displaying the 7 images every 65ms 
@@ -62,24 +118,24 @@ namespace Blitz {
 
 		private void BlitzForm_KeyDown(object sender, KeyEventArgs e) {
 			if (e.KeyCode == Keys.A) {
-				if ((carBox.Location.X - (carBox.Width / 2)) >= 53)
+				if ((carBox.Location.X - (carBox.Width / 2)) >= 48)
 					carBox.Left = carBox.Left - (carBox.Width / 2);
 
-				else if (carBox.Location.X - (carBox.Width / 2) < 53)
-					carBox.Left = carBox.Left - (carBox.Left - 53);
+				else if (carBox.Location.X - (carBox.Width / 2) < 48)
+					carBox.Left = carBox.Left - (carBox.Left - 48);
 			}
 
 			if (e.KeyCode == Keys.D) {
-				if (carBox.Left + (carBox.Width / 2) <= 350)
+				if (carBox.Left + (carBox.Width / 2) <= 342)
 					carBox.Left = carBox.Left + (carBox.Width / 2);
 
-				else if (carBox.Left + (carBox.Width / 2) > 350)
-					carBox.Left = carBox.Left + (carBox.Width) + (350 - carBox.Right);
+				else if (carBox.Left + (carBox.Width / 2) > 342)
+					carBox.Left = carBox.Left + (carBox.Width) + (342 - carBox.Right);
 			}
 		}
 
 		private void BlitzForm_MouseMove(object sender, MouseEventArgs e) {
-			if (e.X >= (53 + (carBox.Width / 2)) && e.X <= (350 + (carBox.Width / 2))) {
+			if (e.X >= (48 + (carBox.Width / 2)) && e.X <= (342 + (carBox.Width / 2))) {
 				carBox.Left = e.X - (carBox.Width / 2);
 			}
 		}

@@ -73,6 +73,16 @@ namespace Blitz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap playerCar {
+            get {
+                object obj = ResourceManager.GetObject("playerCar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap road0 {
             get {
                 object obj = ResourceManager.GetObject("road0", resourceCulture);
