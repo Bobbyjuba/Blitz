@@ -40,6 +40,8 @@ namespace Blitz {
 			moveCoins();
 		}
 
+		// Check if coins have been touched by the car or if they are now unreachable
+		// Reset if either are true
 		private void coinCheck() {
 			if (coinBox1.Bounds.IntersectsWith(carBox.Bounds)) {
 				int x = r.Next(54, 349);
@@ -116,6 +118,7 @@ namespace Blitz {
 			index++;
 		}
 
+		// Key-base movement
 		private void BlitzForm_KeyDown(object sender, KeyEventArgs e) {
 			if (e.KeyCode == Keys.A) {
 				if ((carBox.Location.X - (carBox.Width / 2)) >= 48)
@@ -134,6 +137,7 @@ namespace Blitz {
 			}
 		}
 
+		// Mouse-based movement (CHEATING! ;)
 		private void BlitzForm_MouseMove(object sender, MouseEventArgs e) {
 			if (e.X >= (48 + (carBox.Width / 2)) && e.X <= (342 + (carBox.Width / 2))) {
 				carBox.Left = e.X - (carBox.Width / 2);
