@@ -26,9 +26,14 @@ namespace Blitz {
 		private Random rand = new Random();
 		public BlitzForm() {
 			InitializeComponent();
+			backgroundTimer.Start();
 		}
 
 		private void gameTimer_Tick(object sender, EventArgs e) {
+
+		}
+
+		private void backgroundTimer_Tick(object sender, EventArgs e) {
 			displayBackground();
 		}
 

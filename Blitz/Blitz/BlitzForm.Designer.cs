@@ -26,6 +26,7 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlitzForm));
 			this.gameTimer = new System.Windows.Forms.Timer(this.components);
+			this.backgroundTimer = new System.Windows.Forms.Timer(this.components);
 			this.SuspendLayout();
 			// 
 			// gameTimer
@@ -33,6 +34,11 @@
 			this.gameTimer.Enabled = true;
 			this.gameTimer.Interval = 65;
 			this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+			// 
+			// backgroundTimer
+			// 
+			this.backgroundTimer.Interval = 65;
+			this.backgroundTimer.Tick += new System.EventHandler(this.backgroundTimer_Tick);
 			// 
 			// BlitzForm
 			// 
@@ -53,6 +59,7 @@
 		#endregion
 
 		private System.Windows.Forms.Timer gameTimer;
+		private System.Windows.Forms.Timer backgroundTimer;
 	}
 }
 
