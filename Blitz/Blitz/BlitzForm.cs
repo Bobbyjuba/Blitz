@@ -12,31 +12,33 @@ using System.Windows.Forms;
 namespace Blitz {
 	public partial class BlitzForm : Form {
 		public Bitmap[] background = new Bitmap[] {
-			new Bitmap(@"C:\Users\Bobby\Source\Repos\Bobbyjuba\Blitz\Blitz\Blitz\assets\road0.png"),
-			new Bitmap(@"C:\Users\Bobby\Source\Repos\Bobbyjuba\Blitz\Blitz\Blitz\assets\road1.png"),
-			new Bitmap(@"C:\Users\Bobby\Source\Repos\Bobbyjuba\Blitz\Blitz\Blitz\assets\road2.png"),
-			new Bitmap(@"C:\Users\Bobby\Source\Repos\Bobbyjuba\Blitz\Blitz\Blitz\assets\road3.png"),
-			new Bitmap(@"C:\Users\Bobby\Source\Repos\Bobbyjuba\Blitz\Blitz\Blitz\assets\road4.png"),
-			new Bitmap(@"C:\Users\Bobby\Source\Repos\Bobbyjuba\Blitz\Blitz\Blitz\assets\road5.png"),
-			new Bitmap(@"C:\Users\Bobby\Source\Repos\Bobbyjuba\Blitz\Blitz\Blitz\assets\road6.png")
+			Properties.Resources.road0,
+			Properties.Resources.road1,
+			Properties.Resources.road2,
+			Properties.Resources.road3,
+			Properties.Resources.road4,
+			Properties.Resources.road5,
+			Properties.Resources.road6
 		};
 
 		private int index = 0;
 
-		private Random rand = new Random();
 		public BlitzForm() {
 			InitializeComponent();
 			backgroundTimer.Start();
 		}
 
+		// gameTimer should handle the majority of event logic
 		private void gameTimer_Tick(object sender, EventArgs e) {
 
 		}
 
+		// backgroundTimer should handle the task of displaying the 7 images every 65ms 
 		private void backgroundTimer_Tick(object sender, EventArgs e) {
 			displayBackground();
 		}
 
+		// Increment index every time backgroundTimer ticks, so the next image in the order will display
 		private void displayBackground() {
 			if (index == 7)
 				index = 0;
