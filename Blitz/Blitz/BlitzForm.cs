@@ -11,7 +11,8 @@ using System.Windows.Forms;
 
 namespace Blitz {
 	public partial class BlitzForm : Form {
-		public Bitmap[] background = new Bitmap[] {
+		// Store all of the background images into one Bitmap array
+		private Bitmap[] background = new Bitmap[] {
 			Properties.Resources.road0,
 			Properties.Resources.road1,
 			Properties.Resources.road2,
@@ -21,6 +22,7 @@ namespace Blitz {
 			Properties.Resources.road6
 		};
 
+		// Indexer to iterate through background[]
 		private int index = 0;
 
 		public BlitzForm() {
@@ -40,6 +42,7 @@ namespace Blitz {
 
 		// Increment index every time backgroundTimer ticks, so the next image in the order will display
 		private void displayBackground() {
+			// Reset when index reaches 7, to stay within bounds of background[]
 			if (index == 7)
 				index = 0;
 

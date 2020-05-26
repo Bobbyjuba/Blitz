@@ -18,3 +18,13 @@ C:\Users\Bobby\Source\Repos\Bobbyjuba\Blitz\Blitz\Blitz\obj\Debug\Blitz.csproj.G
 C:\Users\Bobby\Source\Repos\Bobbyjuba\Blitz\Blitz\Blitz\obj\Debug\Blitz.csproj.CoreCompileInputs.cache
 C:\Users\Bobby\Source\Repos\Bobbyjuba\Blitz\Blitz\Blitz\obj\Debug\Blitz.exe
 C:\Users\Bobby\Source\Repos\Bobbyjuba\Blitz\Blitz\Blitz\obj\Debug\Blitz.pdb
+C:\Users\Brian\Desktop\Blitz-0\Blitz\Blitz\bin\Debug\Blitz.exe.config
+C:\Users\Brian\Desktop\Blitz-0\Blitz\Blitz\bin\Debug\Blitz.exe
+C:\Users\Brian\Desktop\Blitz-0\Blitz\Blitz\bin\Debug\Blitz.pdb
+C:\Users\Brian\Desktop\Blitz-0\Blitz\Blitz\obj\Debug\Blitz.csprojAssemblyReference.cache
+C:\Users\Brian\Desktop\Blitz-0\Blitz\Blitz\obj\Debug\Blitz.BlitzForm.resources
+C:\Users\Brian\Desktop\Blitz-0\Blitz\Blitz\obj\Debug\Blitz.Properties.Resources.resources
+C:\Users\Brian\Desktop\Blitz-0\Blitz\Blitz\obj\Debug\Blitz.csproj.GenerateResource.cache
+C:\Users\Brian\Desktop\Blitz-0\Blitz\Blitz\obj\Debug\Blitz.csproj.CoreCompileInputs.cache
+C:\Users\Brian\Desktop\Blitz-0\Blitz\Blitz\obj\Debug\Blitz.exe
+C:\Users\Brian\Desktop\Blitz-0\Blitz\Blitz\obj\Debug\Blitz.pdb

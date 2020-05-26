@@ -81,9 +81,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\road0.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="assets\coin.png" />
   </ItemGroup>
   <ItemGroup>
