@@ -118,14 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\coin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="playerCar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\playerCar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="road0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\road0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="enemyGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\enemyGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="road1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\road1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,16 +127,34 @@
   <data name="road2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\road2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="road3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\road3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="road4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\road4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="enemyPink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\enemyPink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="road5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\road5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="road6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\road6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemyWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\enemyWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="road4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\road4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\coin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="road0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\road0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="road3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\road3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="playerCar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\playerCar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemyBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\enemyBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

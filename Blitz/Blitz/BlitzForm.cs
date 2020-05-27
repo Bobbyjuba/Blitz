@@ -26,7 +26,7 @@ namespace Blitz {
 		private int index = 0;
 		private int coins = 0;
 		private Random r = new Random();
-		private int moveSpeed = 11;
+		private int moveSpeed = 9;
 
 		public BlitzForm() {
 			InitializeComponent();
@@ -38,10 +38,10 @@ namespace Blitz {
 		private void gameTimer_Tick(object sender, EventArgs e) {
 			coinCheck();
 			moveCoins();
+			enemyCheck();
+			moveEnemies();
 		}
 
-		// Check if coins have been touched by the car or if they are now unreachable
-		// Reset if either are true
 		private void coinCheck() {
 			if (coinBox1.Bounds.IntersectsWith(carBox.Bounds)) {
 				int x = r.Next(54, 349);
@@ -92,6 +92,67 @@ namespace Blitz {
 			}
 		}
 
+		private void enemyCheck() {
+			if (enemyBlue.Bounds.IntersectsWith(carBox.Bounds)) {
+				int x = r.Next(54, 349);
+				enemyBlue.Location = new Point(x, 5);
+				backgroundTimer.Stop();
+				gameTimer.Stop();
+				gameOverLabel.Visible = true;
+			}
+
+			if (enemyBlue.Location.Y > carBox.Bottom + 5) {
+				int x = r.Next(54, 349);
+				enemyBlue.Location = new Point(x, 5);
+			}
+
+			if (enemyGreen.Bounds.IntersectsWith(carBox.Bounds)) {
+				int x = r.Next(54, 349);
+				enemyGreen.Location = new Point(x, 5);
+				backgroundTimer.Stop();
+				gameTimer.Stop();
+				gameOverLabel.Visible = true;
+			}
+
+			if (enemyGreen.Location.Y > carBox.Bottom + 5) {
+				int x = r.Next(54, 349);
+				enemyGreen.Location = new Point(x, 5);
+			}
+
+			if (enemyPink.Bounds.IntersectsWith(carBox.Bounds)) {
+				int x = r.Next(54, 349);
+				enemyPink.Location = new Point(x, 5);
+				backgroundTimer.Stop();
+				gameTimer.Stop();
+				gameOverLabel.Visible = true;
+			}
+
+			if (enemyPink.Location.Y > carBox.Bottom + 5) {
+				int x = r.Next(54, 349);
+				enemyPink.Location = new Point(x, 5);
+			}
+
+			if (enemyWhite.Bounds.IntersectsWith(carBox.Bounds)) {
+				int x = r.Next(54, 349);
+				enemyWhite.Location = new Point(x, 5);
+				backgroundTimer.Stop();
+				gameTimer.Stop();
+				gameOverLabel.Visible = true;
+			}
+
+			if (enemyWhite.Location.Y > carBox.Bottom + 5) {
+				int x = r.Next(54, 349);
+				enemyWhite.Location = new Point(x, 5);
+			}
+		}
+
+		private void moveEnemies() {
+			enemyBlue.Top += moveSpeed;
+			enemyGreen.Top += moveSpeed;
+			enemyPink.Top += moveSpeed;
+			enemyWhite.Top += moveSpeed;
+		}
+
 		private void moveCoins() {
 			coinBox1.Top += moveSpeed;
 			coinBox2.Top += moveSpeed;
@@ -118,7 +179,6 @@ namespace Blitz {
 			index++;
 		}
 
-		// Key-base movement
 		private void BlitzForm_KeyDown(object sender, KeyEventArgs e) {
 			if (e.KeyCode == Keys.A) {
 				if ((carBox.Location.X - (carBox.Width / 2)) >= 48)
@@ -137,7 +197,6 @@ namespace Blitz {
 			}
 		}
 
-		// Mouse-based movement (CHEATING! ;)
 		private void BlitzForm_MouseMove(object sender, MouseEventArgs e) {
 			if (e.X >= (48 + (carBox.Width / 2)) && e.X <= (342 + (carBox.Width / 2))) {
 				carBox.Left = e.X - (carBox.Width / 2);
