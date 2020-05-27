@@ -56,7 +56,7 @@
 			// 
 			// backgroundTimer
 			// 
-			this.backgroundTimer.Interval = 53;
+			this.backgroundTimer.Interval = 15;
 			this.backgroundTimer.Tick += new System.EventHandler(this.backgroundTimer_Tick);
 			// 
 			// coinBox1
