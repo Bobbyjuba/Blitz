@@ -1,0 +1,4 @@
+carBox origin: 150, 485
+
+Left side of road: 53, 485
+Right side of road: 350, 485
