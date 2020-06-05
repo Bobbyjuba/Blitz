@@ -64,8 +64,7 @@
 			this.coinBox1.BackColor = System.Drawing.Color.Transparent;
 			this.coinBox1.BackgroundImage = global::Blitz.Properties.Resources.coin;
 			this.coinBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.coinBox1.Location = new System.Drawing.Point(168, 46);
-			this.coinBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.coinBox1.Location = new System.Drawing.Point(126, 37);
 			this.coinBox1.Name = "coinBox1";
 			this.coinBox1.Size = new System.Drawing.Size(20, 20);
 			this.coinBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -77,8 +76,7 @@
 			this.carBox.BackColor = System.Drawing.Color.Transparent;
 			this.carBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("carBox.BackgroundImage")));
 			this.carBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.carBox.Location = new System.Drawing.Point(149, 596);
-			this.carBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.carBox.Location = new System.Drawing.Point(112, 484);
 			this.carBox.Name = "carBox";
 			this.carBox.Size = new System.Drawing.Size(32, 43);
 			this.carBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -90,8 +88,7 @@
 			this.coinBox2.BackColor = System.Drawing.Color.Transparent;
 			this.coinBox2.BackgroundImage = global::Blitz.Properties.Resources.coin;
 			this.coinBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.coinBox2.Location = new System.Drawing.Point(439, 27);
-			this.coinBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.coinBox2.Location = new System.Drawing.Point(329, 22);
 			this.coinBox2.Name = "coinBox2";
 			this.coinBox2.Size = new System.Drawing.Size(20, 20);
 			this.coinBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -103,8 +100,7 @@
 			this.coinBox4.BackColor = System.Drawing.Color.Transparent;
 			this.coinBox4.BackgroundImage = global::Blitz.Properties.Resources.coin;
 			this.coinBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.coinBox4.Location = new System.Drawing.Point(357, 103);
-			this.coinBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.coinBox4.Location = new System.Drawing.Point(268, 84);
 			this.coinBox4.Name = "coinBox4";
 			this.coinBox4.Size = new System.Drawing.Size(20, 20);
 			this.coinBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -116,8 +112,7 @@
 			this.coinBox3.BackColor = System.Drawing.Color.Transparent;
 			this.coinBox3.BackgroundImage = global::Blitz.Properties.Resources.coin;
 			this.coinBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.coinBox3.Location = new System.Drawing.Point(137, 196);
-			this.coinBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.coinBox3.Location = new System.Drawing.Point(103, 159);
 			this.coinBox3.Name = "coinBox3";
 			this.coinBox3.Size = new System.Drawing.Size(20, 20);
 			this.coinBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -130,10 +125,9 @@
 			this.coinLabel.BackColor = System.Drawing.Color.Transparent;
 			this.coinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.coinLabel.ForeColor = System.Drawing.Color.Black;
-			this.coinLabel.Location = new System.Drawing.Point(75, 11);
-			this.coinLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.coinLabel.Location = new System.Drawing.Point(56, 9);
 			this.coinLabel.Name = "coinLabel";
-			this.coinLabel.Size = new System.Drawing.Size(79, 20);
+			this.coinLabel.Size = new System.Drawing.Size(67, 17);
 			this.coinLabel.TabIndex = 5;
 			this.coinLabel.Text = "Coins: 0";
 			// 
@@ -142,8 +136,7 @@
 			this.enemyPink.BackColor = System.Drawing.Color.Transparent;
 			this.enemyPink.BackgroundImage = global::Blitz.Properties.Resources.enemyPink;
 			this.enemyPink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.enemyPink.Location = new System.Drawing.Point(79, 73);
-			this.enemyPink.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.enemyPink.Location = new System.Drawing.Point(59, 59);
 			this.enemyPink.Name = "enemyPink";
 			this.enemyPink.Size = new System.Drawing.Size(32, 43);
 			this.enemyPink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -155,8 +148,7 @@
 			this.enemyWhite.BackColor = System.Drawing.Color.Transparent;
 			this.enemyWhite.BackgroundImage = global::Blitz.Properties.Resources.enemyWhite;
 			this.enemyWhite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.enemyWhite.Location = new System.Drawing.Point(417, 138);
-			this.enemyWhite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.enemyWhite.Location = new System.Drawing.Point(313, 112);
 			this.enemyWhite.Name = "enemyWhite";
 			this.enemyWhite.Size = new System.Drawing.Size(32, 43);
 			this.enemyWhite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -168,8 +160,7 @@
 			this.enemyGreen.BackColor = System.Drawing.Color.Transparent;
 			this.enemyGreen.BackgroundImage = global::Blitz.Properties.Resources.enemyGreen;
 			this.enemyGreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.enemyGreen.Location = new System.Drawing.Point(336, 13);
-			this.enemyGreen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.enemyGreen.Location = new System.Drawing.Point(252, 11);
 			this.enemyGreen.Name = "enemyGreen";
 			this.enemyGreen.Size = new System.Drawing.Size(32, 43);
 			this.enemyGreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -181,8 +172,7 @@
 			this.enemyBlue.BackColor = System.Drawing.Color.Transparent;
 			this.enemyBlue.BackgroundImage = global::Blitz.Properties.Resources.enemyBlue;
 			this.enemyBlue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.enemyBlue.Location = new System.Drawing.Point(187, 119);
-			this.enemyBlue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.enemyBlue.Location = new System.Drawing.Point(140, 97);
 			this.enemyBlue.Name = "enemyBlue";
 			this.enemyBlue.Size = new System.Drawing.Size(32, 43);
 			this.enemyBlue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -195,21 +185,20 @@
 			this.gameOverLabel.BackColor = System.Drawing.Color.Transparent;
 			this.gameOverLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.gameOverLabel.ForeColor = System.Drawing.Color.Crimson;
-			this.gameOverLabel.Location = new System.Drawing.Point(97, 255);
-			this.gameOverLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.gameOverLabel.Location = new System.Drawing.Point(73, 207);
 			this.gameOverLabel.Name = "gameOverLabel";
-			this.gameOverLabel.Size = new System.Drawing.Size(362, 63);
+			this.gameOverLabel.Size = new System.Drawing.Size(291, 51);
 			this.gameOverLabel.TabIndex = 10;
 			this.gameOverLabel.Text = "GAME OVER";
 			this.gameOverLabel.Visible = false;
 			// 
 			// BlitzForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(581, 703);
+			this.ClientSize = new System.Drawing.Size(436, 571);
 			this.Controls.Add(this.coinLabel);
 			this.Controls.Add(this.carBox);
 			this.Controls.Add(this.gameOverLabel);
@@ -222,7 +211,6 @@
 			this.Controls.Add(this.enemyBlue);
 			this.Controls.Add(this.enemyWhite);
 			this.DoubleBuffered = true;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.MaximizeBox = false;
 			this.Name = "BlitzForm";
 			this.Text = "Blitz";

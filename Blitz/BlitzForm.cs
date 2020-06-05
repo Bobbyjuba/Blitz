@@ -26,7 +26,12 @@ namespace Blitz {
 		private int index = 0;
 		private int coins = 0;
 		private Random r = new Random();
-		private int moveSpeed = 9;
+		private readonly int moveSpeed = 9;
+		private readonly int roadLeftSide = 52;
+		private readonly int roadRightSide = 348;
+		private readonly int initialYSpawn = 5;
+		private readonly int roadLeftSideColl = 52;
+		private readonly int roadRightSideColl = 348;
 
 		public BlitzForm() {
 			InitializeComponent();
@@ -44,105 +49,105 @@ namespace Blitz {
 
 		private void coinCheck() {
 			if (coinBox1.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(54, 349);
-				coinBox1.Location = new Point(x, 5);
+				int x = r.Next(roadLeftSide, roadRightSide);
+				coinBox1.Location = new Point(x, initialYSpawn);
 				coins++;
 				updateScore();
 			}
 
-			if (coinBox1.Location.Y > carBox.Bottom + 5) {
-				int x = r.Next(54, 349);
-				coinBox1.Location = new Point(x, 5);
+			if (coinBox1.Location.Y > carBox.Bottom + initialYSpawn) {
+				int x = r.Next(roadLeftSide, roadRightSide);
+				coinBox1.Location = new Point(x, initialYSpawn);
 			}
 
 			if (coinBox2.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(54, 349);
-				coinBox2.Location = new Point(x, 5);
+				int x = r.Next(roadLeftSide, roadRightSide);
+				coinBox2.Location = new Point(x, initialYSpawn);
 				coins++;
 				updateScore();
 			}
 
-			if (coinBox2.Location.Y > carBox.Bottom + 5) {
-				int x = r.Next(54, 349);
-				coinBox2.Location = new Point(x, 5);
+			if (coinBox2.Location.Y > carBox.Bottom + initialYSpawn) {
+				int x = r.Next(roadLeftSide, roadRightSide);
+				coinBox2.Location = new Point(x, initialYSpawn);
 			}
 
 			if (coinBox3.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(54, 349);
-				coinBox3.Location = new Point(x, 5);
+				int x = r.Next(roadLeftSide, roadRightSide);
+				coinBox3.Location = new Point(x, initialYSpawn);
 				coins++;
 				updateScore();
 			}
 
-			if (coinBox3.Location.Y > carBox.Bottom + 5) {
-				int x = r.Next(54, 349);
-				coinBox3.Location = new Point(x, 5);
+			if (coinBox3.Location.Y > carBox.Bottom + initialYSpawn) {
+				int x = r.Next(roadLeftSide, roadRightSide);
+				coinBox3.Location = new Point(x, initialYSpawn);
 			}
 
 			if (coinBox4.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(54, 349);
-				coinBox4.Location = new Point(x, 5);
+				int x = r.Next(roadLeftSide, roadRightSide);
+				coinBox4.Location = new Point(x, initialYSpawn);
 				coins++;
 				updateScore();
 			}
 
-			if (coinBox4.Location.Y > carBox.Bottom + 5) {
-				int x = r.Next(54, 349);
-				coinBox4.Location = new Point(x, 5);
+			if (coinBox4.Location.Y > carBox.Bottom + initialYSpawn) {
+				int x = r.Next(roadLeftSide, roadRightSide);
+				coinBox4.Location = new Point(x, initialYSpawn);
 			}
 		}
 
 		private void enemyCheck() {
 			if (enemyBlue.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(54, 349);
-				enemyBlue.Location = new Point(x, 5);
+				int x = r.Next(roadLeftSide, roadRightSide);
+				enemyBlue.Location = new Point(x, initialYSpawn);
 				backgroundTimer.Stop();
 				gameTimer.Stop();
 				gameOverLabel.Visible = true;
 			}
 
-			if (enemyBlue.Location.Y > carBox.Bottom + 5) {
-				int x = r.Next(54, 349);
-				enemyBlue.Location = new Point(x, 5);
+			if (enemyBlue.Location.Y > carBox.Bottom + initialYSpawn) {
+				int x = r.Next(roadLeftSide, roadRightSide);
+				enemyBlue.Location = new Point(x, initialYSpawn);
 			}
 
 			if (enemyGreen.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(54, 349);
-				enemyGreen.Location = new Point(x, 5);
+				int x = r.Next(roadLeftSide, roadRightSide);
+				enemyGreen.Location = new Point(x, initialYSpawn);
 				backgroundTimer.Stop();
 				gameTimer.Stop();
 				gameOverLabel.Visible = true;
 			}
 
-			if (enemyGreen.Location.Y > carBox.Bottom + 5) {
-				int x = r.Next(54, 349);
-				enemyGreen.Location = new Point(x, 5);
+			if (enemyGreen.Location.Y > carBox.Bottom + initialYSpawn) {
+				int x = r.Next(roadLeftSide, roadRightSide);
+				enemyGreen.Location = new Point(x, initialYSpawn);
 			}
 
 			if (enemyPink.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(54, 349);
-				enemyPink.Location = new Point(x, 5);
+				int x = r.Next(roadLeftSide, roadRightSide);
+				enemyPink.Location = new Point(x, initialYSpawn);
 				backgroundTimer.Stop();
 				gameTimer.Stop();
 				gameOverLabel.Visible = true;
 			}
 
-			if (enemyPink.Location.Y > carBox.Bottom + 5) {
-				int x = r.Next(54, 349);
-				enemyPink.Location = new Point(x, 5);
+			if (enemyPink.Location.Y > carBox.Bottom + initialYSpawn) {
+				int x = r.Next(roadLeftSide, roadRightSide);
+				enemyPink.Location = new Point(x, initialYSpawn);
 			}
 
 			if (enemyWhite.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(54, 349);
-				enemyWhite.Location = new Point(x, 5);
+				int x = r.Next(roadLeftSide, roadRightSide);
+				enemyWhite.Location = new Point(x, initialYSpawn);
 				backgroundTimer.Stop();
 				gameTimer.Stop();
 				gameOverLabel.Visible = true;
 			}
 
-			if (enemyWhite.Location.Y > carBox.Bottom + 5) {
-				int x = r.Next(54, 349);
-				enemyWhite.Location = new Point(x, 5);
+			if (enemyWhite.Location.Y > carBox.Bottom + initialYSpawn) {
+				int x = r.Next(roadLeftSide, roadRightSide);
+				enemyWhite.Location = new Point(x, initialYSpawn);
 			}
 		}
 
@@ -172,7 +177,7 @@ namespace Blitz {
 		// Increment index every time backgroundTimer ticks, so the next image in the order will display
 		private void displayBackground() {
 			// Reset when index reaches 7, to stay within bounds of background[]
-			if (index == 7)
+			if (index == background.Length)
 				index = 0;
 
 			this.BackgroundImage = background[index];
@@ -181,24 +186,24 @@ namespace Blitz {
 
 		private void BlitzForm_KeyDown(object sender, KeyEventArgs e) {
 			if (e.KeyCode == Keys.A) {
-				if ((carBox.Location.X - (carBox.Width / 2)) >= 48)
+				if ((carBox.Location.X - (carBox.Width / 2)) >= roadLeftSideColl)
 					carBox.Left = carBox.Left - (carBox.Width / 2);
 
-				else if (carBox.Location.X - (carBox.Width / 2) < 48)
-					carBox.Left = carBox.Left - (carBox.Left - 48);
+				else if (carBox.Location.X - (carBox.Width / 2) < roadLeftSideColl)
+					carBox.Left = carBox.Left - (carBox.Left - roadLeftSideColl);
 			}
 
 			if (e.KeyCode == Keys.D) {
-				if (carBox.Left + (carBox.Width / 2) <= 342)
+				if (carBox.Left + (carBox.Width / 2) <= roadRightSideColl)
 					carBox.Left = carBox.Left + (carBox.Width / 2);
 
-				else if (carBox.Left + (carBox.Width / 2) > 342)
-					carBox.Left = carBox.Left + (carBox.Width) + (342 - carBox.Right);
+				else if (carBox.Left + (carBox.Width / 2) > roadRightSideColl)
+					carBox.Left = carBox.Left + (carBox.Width) + (roadRightSideColl - carBox.Right);
 			}
 		}
 
 		private void BlitzForm_MouseMove(object sender, MouseEventArgs e) {
-			if (e.X >= (48 + (carBox.Width / 2)) && e.X <= (342 + (carBox.Width / 2))) {
+			if (e.X >= (roadLeftSideColl + (carBox.Width / 2)) && e.X <= (roadRightSideColl + (carBox.Width / 2))) {
 				carBox.Left = e.X - (carBox.Width / 2);
 			}
 		}
