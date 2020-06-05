@@ -30,8 +30,6 @@ namespace Blitz {
 		private readonly int roadLeftSide = 52;
 		private readonly int roadRightSide = 348;
 		private readonly int initialYSpawn = 5;
-		private readonly int roadLeftSideColl = 52;
-		private readonly int roadRightSideColl = 348;
 
 		public BlitzForm() {
 			InitializeComponent();
@@ -186,24 +184,24 @@ namespace Blitz {
 
 		private void BlitzForm_KeyDown(object sender, KeyEventArgs e) {
 			if (e.KeyCode == Keys.A) {
-				if ((carBox.Location.X - (carBox.Width / 2)) >= roadLeftSideColl)
+				if ((carBox.Location.X - (carBox.Width / 2)) >= roadLeftSide)
 					carBox.Left = carBox.Left - (carBox.Width / 2);
 
-				else if (carBox.Location.X - (carBox.Width / 2) < roadLeftSideColl)
-					carBox.Left = carBox.Left - (carBox.Left - roadLeftSideColl);
+				else if (carBox.Location.X - (carBox.Width / 2) < roadLeftSide)
+					carBox.Left = carBox.Left - (carBox.Left - roadLeftSide);
 			}
 
 			if (e.KeyCode == Keys.D) {
-				if (carBox.Left + (carBox.Width / 2) <= roadRightSideColl)
+				if (carBox.Left + (carBox.Width / 2) <= roadRightSide)
 					carBox.Left = carBox.Left + (carBox.Width / 2);
 
-				else if (carBox.Left + (carBox.Width / 2) > roadRightSideColl)
-					carBox.Left = carBox.Left + (carBox.Width) + (roadRightSideColl - carBox.Right);
+				else if (carBox.Left + (carBox.Width / 2) > roadRightSide)
+					carBox.Left = carBox.Left + (carBox.Width) + (roadRightSide - carBox.Right);
 			}
 		}
 
 		private void BlitzForm_MouseMove(object sender, MouseEventArgs e) {
-			if (e.X >= (roadLeftSideColl + (carBox.Width / 2)) && e.X <= (roadRightSideColl + (carBox.Width / 2))) {
+			if (e.X >= (roadLeftSide + (carBox.Width / 2)) && e.X <= (roadRightSide + (carBox.Width / 2))) {
 				carBox.Left = e.X - (carBox.Width / 2);
 			}
 		}
