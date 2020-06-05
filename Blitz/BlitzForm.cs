@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Blitz {
 	public partial class BlitzForm : Form {
+
 		// Store all of the background images into one Bitmap array
 		private Bitmap[] background = new Bitmap[] {
 			Properties.Resources.road0,
@@ -22,7 +23,6 @@ namespace Blitz {
 			Properties.Resources.road6
 		};
 
-		// Indexer to iterate through background[]
 		private int index = 0;
 		private int coins = 0;
 		private Random r = new Random();
@@ -45,6 +45,7 @@ namespace Blitz {
 			moveEnemies();
 		}
 
+		// Check if the player has collected any of the coins or if the coins have moved past the player
 		private void coinCheck() {
 			if (coinBox1.Bounds.IntersectsWith(carBox.Bounds)) {
 				int x = r.Next(roadLeftSide, roadRightSide);
@@ -95,6 +96,7 @@ namespace Blitz {
 			}
 		}
 
+		// Check if the player has crashed into any of the enemy cars or the enemy cars have moved past the player
 		private void enemyCheck() {
 			if (enemyBlue.Bounds.IntersectsWith(carBox.Bounds)) {
 				int x = r.Next(roadLeftSide, roadRightSide);
@@ -149,6 +151,7 @@ namespace Blitz {
 			}
 		}
 
+		// Move the enemies toward the bottom of the screen
 		private void moveEnemies() {
 			enemyBlue.Top += moveSpeed;
 			enemyGreen.Top += moveSpeed;
@@ -156,6 +159,7 @@ namespace Blitz {
 			enemyWhite.Top += moveSpeed;
 		}
 
+		// Move the coins toward the bottom of the screen
 		private void moveCoins() {
 			coinBox1.Top += moveSpeed;
 			coinBox2.Top += moveSpeed;
@@ -163,6 +167,7 @@ namespace Blitz {
 			coinBox4.Top += moveSpeed;
 		}
 
+		// Keep track of how many coins the player has collected
 		private void updateScore() {
 			coinLabel.Text = $"Coins: {coins}";
 		}
@@ -174,7 +179,7 @@ namespace Blitz {
 
 		// Increment index every time backgroundTimer ticks, so the next image in the order will display
 		private void displayBackground() {
-			// Reset when index reaches 7, to stay within bounds of background[]
+			// Reset when index reaches the end of the array, to stay within bounds of background[]
 			if (index == background.Length)
 				index = 0;
 
@@ -182,6 +187,7 @@ namespace Blitz {
 			index++;
 		}
 
+		// Keyboard-based movement
 		private void BlitzForm_KeyDown(object sender, KeyEventArgs e) {
 			if (e.KeyCode == Keys.A) {
 				if ((carBox.Location.X - (carBox.Width / 2)) >= roadLeftSide)
@@ -200,6 +206,7 @@ namespace Blitz {
 			}
 		}
 
+		// Mouse-based movement (the superior style!)
 		private void BlitzForm_MouseMove(object sender, MouseEventArgs e) {
 			if (e.X >= (roadLeftSide + (carBox.Width / 2)) && e.X <= (roadRightSide + (carBox.Width / 2))) {
 				carBox.Left = e.X - (carBox.Width / 2);
