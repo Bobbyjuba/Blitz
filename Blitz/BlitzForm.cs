@@ -185,11 +185,12 @@ namespace Blitz {
 					carBox.Left = carBox.Left + (carBox.Width) + (roadRightSide - carBox.Right);
 			}
 
-			if (e.KeyCode == Keys.R && highscoreLabel.Visible) {
+			if (e.KeyCode == Keys.R && gameOverLabel.Visible) {
 				coins = 0;
 				gameOverLabel.Visible = false;
 				highscoreLabel.Visible = false;
 				allEnemies.ForEach(enemy => respawn(enemy, r.Next(initialYSpawn, 20 * initialYSpawn)));
+				allCoins.ForEach(coin => respawn(coin, r.Next(initialYSpawn, 20 * initialYSpawn)));
 				backgroundTimer.Start();
 				gameTimer.Start();
 			}
