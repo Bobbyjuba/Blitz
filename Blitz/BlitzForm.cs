@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,14 +26,20 @@ namespace Blitz {
 		};
 
 		private int index = 0;
-		private int coins = 0;
 		private Random r = new Random();
 		private readonly int moveSpeed = 9;
 		private readonly int roadLeftSide = 52;
 		private readonly int roadRightSide = 348;
-		private readonly int initialYSpawn = 5;
+		private const int initialYSpawn = 5;
 		private string highscore;
 		private string scoreDirectory = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + @"\assets\scores\highscore.txt";
+		private List<PictureBox> allCoins { get { return new List<PictureBox> { coinBox1, coinBox2, coinBox3, coinBox4 }; } }
+		private List<PictureBox> allEnemies { get { return new List<PictureBox> { enemyBlue, enemyGreen, enemyPink, enemyWhite }; } }
+		private int _coins;
+		private int coins {
+			get { return _coins; }
+			set { _coins = value; updateScore(); }
+		}
 
 
 		public BlitzForm() {
@@ -50,114 +56,54 @@ namespace Blitz {
 			moveEnemies();
 		}
 
+		// respawns a coin or enemy to a random x value and the given y value (initialYSpawn by default)
+		private void respawn(PictureBox coin, int yValue = initialYSpawn) {
+			int x = r.Next(roadLeftSide, roadRightSide);
+			coin.Location = new Point(x, yValue);
+		}
+
 		// Check if the player has collected any of the coins or if the coins have moved past the player
 		private void coinCheck() {
-			if (coinBox1.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				coinBox1.Location = new Point(x, initialYSpawn);
-				coins++;
-				updateScore();
-			}
 
-			if (coinBox1.Location.Y > carBox.Bottom + initialYSpawn) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				coinBox1.Location = new Point(x, initialYSpawn);
-			}
+			allCoins.ForEach(coin => {
 
-			if (coinBox2.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				coinBox2.Location = new Point(x, initialYSpawn);
-				coins++;
-				updateScore();
-			}
+				if (coin.Bounds.IntersectsWith(carBox.Bounds)) {
+					respawn(coin);
+					coins++;
+				}
 
-			if (coinBox2.Location.Y > carBox.Bottom + initialYSpawn) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				coinBox2.Location = new Point(x, initialYSpawn);
-			}
+				if (coin.Location.Y > carBox.Bottom + initialYSpawn) {
+					respawn(coin);
+				}
 
-			if (coinBox3.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				coinBox3.Location = new Point(x, initialYSpawn);
-				coins++;
-				updateScore();
-			}
+			});
 
-			if (coinBox3.Location.Y > carBox.Bottom + initialYSpawn) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				coinBox3.Location = new Point(x, initialYSpawn);
-			}
+		}
 
-			if (coinBox4.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				coinBox4.Location = new Point(x, initialYSpawn);
-				coins++;
-				updateScore();
-			}
-
-			if (coinBox4.Location.Y > carBox.Bottom + initialYSpawn) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				coinBox4.Location = new Point(x, initialYSpawn);
-			}
+		// On game over, stop timers and show gameover screen
+		private void gameOver(PictureBox enemy) {
+			respawn(enemy);
+			backgroundTimer.Stop();
+			gameTimer.Stop();
+			gameOverLabel.Visible = true;
+			displayHighscore();
 		}
 
 		// Check if the player has crashed into any of the enemy cars or the enemy cars have moved past the player
 		private void enemyCheck() {
-			if (enemyBlue.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				enemyBlue.Location = new Point(x, initialYSpawn);
-				backgroundTimer.Stop();
-				gameTimer.Stop();
-				gameOverLabel.Visible = true;
-				displayHighscore();
-			}
 
-			if (enemyBlue.Location.Y > carBox.Bottom + initialYSpawn) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				enemyBlue.Location = new Point(x, initialYSpawn);
-			}
+			allEnemies.ForEach(enemy => {
 
-			if (enemyGreen.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				enemyGreen.Location = new Point(x, initialYSpawn);
-				backgroundTimer.Stop();
-				gameTimer.Stop();
-				gameOverLabel.Visible = true;
-				displayHighscore();
-			}
+				if (enemy.Bounds.IntersectsWith(carBox.Bounds)) {
+					gameOver(enemy);
+				}
 
-			if (enemyGreen.Location.Y > carBox.Bottom + initialYSpawn) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				enemyGreen.Location = new Point(x, initialYSpawn);
-			}
+				if (enemy.Location.Y > carBox.Bottom + initialYSpawn) {
+					respawn(enemy);
+				}
 
-			if (enemyPink.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				enemyPink.Location = new Point(x, initialYSpawn);
-				backgroundTimer.Stop();
-				gameTimer.Stop();
-				gameOverLabel.Visible = true;
-				displayHighscore();
-			}
+			});
 
-			if (enemyPink.Location.Y > carBox.Bottom + initialYSpawn) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				enemyPink.Location = new Point(x, initialYSpawn);
-			}
-
-			if (enemyWhite.Bounds.IntersectsWith(carBox.Bounds)) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				enemyWhite.Location = new Point(x, initialYSpawn);
-				backgroundTimer.Stop();
-				gameTimer.Stop();
-				gameOverLabel.Visible = true;
-				displayHighscore();
-			}
-
-			if (enemyWhite.Location.Y > carBox.Bottom + initialYSpawn) {
-				int x = r.Next(roadLeftSide, roadRightSide);
-				enemyWhite.Location = new Point(x, initialYSpawn);
-			}
 		}
 
 		// Move the enemies toward the bottom of the screen
@@ -237,6 +183,15 @@ namespace Blitz {
 
 				else if (carBox.Left + (carBox.Width / 2) > roadRightSide)
 					carBox.Left = carBox.Left + (carBox.Width) + (roadRightSide - carBox.Right);
+			}
+
+			if (e.KeyCode == Keys.R && highscoreLabel.Visible) {
+				coins = 0;
+				gameOverLabel.Visible = false;
+				highscoreLabel.Visible = false;
+				allEnemies.ForEach(enemy => respawn(enemy, r.Next(initialYSpawn, 20 * initialYSpawn)));
+				backgroundTimer.Start();
+				gameTimer.Start();
 			}
 		}
 
