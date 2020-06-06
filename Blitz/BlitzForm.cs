@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -30,6 +32,9 @@ namespace Blitz {
 		private readonly int roadLeftSide = 52;
 		private readonly int roadRightSide = 348;
 		private readonly int initialYSpawn = 5;
+		private string highscore;
+		private string scoreDirectory = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + @"\assets\scores\highscore.txt";
+
 
 		public BlitzForm() {
 			InitializeComponent();
@@ -104,6 +109,7 @@ namespace Blitz {
 				backgroundTimer.Stop();
 				gameTimer.Stop();
 				gameOverLabel.Visible = true;
+				displayHighscore();
 			}
 
 			if (enemyBlue.Location.Y > carBox.Bottom + initialYSpawn) {
@@ -117,6 +123,7 @@ namespace Blitz {
 				backgroundTimer.Stop();
 				gameTimer.Stop();
 				gameOverLabel.Visible = true;
+				displayHighscore();
 			}
 
 			if (enemyGreen.Location.Y > carBox.Bottom + initialYSpawn) {
@@ -130,6 +137,7 @@ namespace Blitz {
 				backgroundTimer.Stop();
 				gameTimer.Stop();
 				gameOverLabel.Visible = true;
+				displayHighscore();
 			}
 
 			if (enemyPink.Location.Y > carBox.Bottom + initialYSpawn) {
@@ -143,6 +151,7 @@ namespace Blitz {
 				backgroundTimer.Stop();
 				gameTimer.Stop();
 				gameOverLabel.Visible = true;
+				displayHighscore();
 			}
 
 			if (enemyWhite.Location.Y > carBox.Bottom + initialYSpawn) {
@@ -165,6 +174,31 @@ namespace Blitz {
 			coinBox2.Top += moveSpeed;
 			coinBox3.Top += moveSpeed;
 			coinBox4.Top += moveSpeed;
+		}
+
+		private void displayHighscore() {
+			if (System.IO.File.Exists(scoreDirectory)) {
+				highscore = System.IO.File.ReadAllText(scoreDirectory);
+				if (Convert.ToInt32(highscore) < coins) {
+					System.IO.File.WriteAllText(scoreDirectory, Convert.ToString(coins));
+					highscore = System.IO.File.ReadAllText(scoreDirectory);
+					highscoreLabel.Text = $"Highscore: {highscore}";
+					highscoreLabel.Visible = true;
+					return;
+				}
+
+				highscoreLabel.Text = $"Highscore: {highscore}";
+				highscoreLabel.Visible = true;
+				return;
+			}
+
+			else {
+				System.IO.File.WriteAllText(scoreDirectory, Convert.ToString(coins));
+				highscore = System.IO.File.ReadAllText(scoreDirectory);
+				highscoreLabel.Text = $"Highscore: {highscore}";
+				highscoreLabel.Visible = true;
+				return;
+			}
 		}
 
 		// Keep track of how many coins the player has collected

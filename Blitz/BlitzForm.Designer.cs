@@ -38,6 +38,7 @@
 			this.enemyGreen = new System.Windows.Forms.PictureBox();
 			this.enemyBlue = new System.Windows.Forms.PictureBox();
 			this.gameOverLabel = new System.Windows.Forms.Label();
+			this.highscoreLabel = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.coinBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.carBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.coinBox2)).BeginInit();
@@ -192,6 +193,18 @@
 			this.gameOverLabel.Text = "GAME OVER";
 			this.gameOverLabel.Visible = false;
 			// 
+			// highscoreLabel
+			// 
+			this.highscoreLabel.AutoSize = true;
+			this.highscoreLabel.BackColor = System.Drawing.Color.Transparent;
+			this.highscoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.highscoreLabel.Location = new System.Drawing.Point(106, 269);
+			this.highscoreLabel.Name = "highscoreLabel";
+			this.highscoreLabel.Size = new System.Drawing.Size(152, 31);
+			this.highscoreLabel.TabIndex = 11;
+			this.highscoreLabel.Text = "Highscore: ";
+			this.highscoreLabel.Visible = false;
+			// 
 			// BlitzForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,6 +212,7 @@
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(436, 571);
+			this.Controls.Add(this.highscoreLabel);
 			this.Controls.Add(this.coinLabel);
 			this.Controls.Add(this.carBox);
 			this.Controls.Add(this.gameOverLabel);
@@ -245,6 +259,7 @@
 		private System.Windows.Forms.PictureBox enemyGreen;
 		private System.Windows.Forms.PictureBox enemyBlue;
 		private System.Windows.Forms.Label gameOverLabel;
+		private System.Windows.Forms.Label highscoreLabel;
 	}
 }
 
